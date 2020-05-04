@@ -3,7 +3,7 @@
 Base project for a mixamo->blender->godot project 
 
 ## Workflow
-### Tools
+### Animation Workflow Tools
 
 In a simple example we have an animation downloaded from mixamo with the default settings as an fbx file.
 
@@ -15,3 +15,4 @@ The tool is found on https://viniguerrero.itch.io/godot-game-tools and you will 
 
 Please use the video on the page to know how to use it to export the final gltf files that are structured in a way that godot can pick them up and make them avalable in teh scene tree
 
+### Landscape Workflow Tools
