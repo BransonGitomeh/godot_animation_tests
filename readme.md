@@ -16,3 +16,11 @@ The tool is found on https://viniguerrero.itch.io/godot-game-tools and you will 
 Please use the video on the page to know how to use it to export the final gltf files that are structured in a way that godot can pick them up and make them avalable in teh scene tree
 
 ### Landscape Workflow Tools
+For land, we need a vexel based landscape generation tool, and since godot doesnt have an inbuilt one, we use this plugin https://github.com/Zylann/godot_terrain_plugin to make the landscape.
+
+We also write our own vertext shaders to show different materials based on height.
+
+//todo: load heightmaps from network and cache them locally
+
+### Asset placement for assets on the landscape
+
