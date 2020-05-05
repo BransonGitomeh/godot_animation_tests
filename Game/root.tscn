@@ -51,10 +51,11 @@ shader_params/u_globalmap_tint_top = null
 shader_params/u_bottom_ao = null
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 62.4785, 1.43029, 17.9699 )
+transform = Transform( 0.334827, 0, 0.94228, 0, 1, 0, -0.94228, 0, 0.334827, 149.797, 16.5348, 150.689 )
 
 [node name="Camera" parent="player/target" index="0"]
 transform = Transform( -0.999851, 0, -0.0172603, 0, 1, 0, 0.0172603, 0, -0.999851, 0, 3.90302, -13.7723 )
+far = 6912.1
 
 [editable path="remy"]
 

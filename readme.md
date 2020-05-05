@@ -1,3 +1,5 @@
+video demo is here https://youtu.be/qcyf3qygG1w
+
 # What is this
 
 Base project for a `mixamo -> blender -> godot` project with an emphasis on merging multiple animations, proper materials export
@@ -26,4 +28,6 @@ We also write our own vertext shaders to show different materials based on heigh
 //todo: load heightmaps from network and cache them locally
 
 ### Asset placement for assets on the landscape
+
+
 
