@@ -45,7 +45,7 @@ shader_params/u_globalmap_tint_top = null
 shader_params/u_bottom_ao = null
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.334827, 0, 0.94228, 0, 1, 0, -0.94228, 0, 0.334827, 149.797, 16.5348, 150.689 )
+transform = Transform( 0.334827, 0, 0.94228, 0, 1, 0, -0.94228, 0, 0.334827, 149.797, 62.5327, 150.689 )
 
 [node name="Body" parent="player" index="0"]
 visible = false
