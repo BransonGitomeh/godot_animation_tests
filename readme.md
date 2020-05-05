@@ -21,9 +21,9 @@ Please use the video on the page to know how to use it to export the final gltf 
 Switch blender to lookdev/render mode(top right corner) for it to load materials into memory before you export the character, otherwise you'll just get white materials in godot engine which is probably not what you want
 
 ### Landscape Workflow Tools
-For land, we need a vexel based landscape generation tool, and since godot doesnt have an inbuilt one, we use this plugin https://github.com/Zylann/godot_terrain_plugin to make the landscape.
+For land, we need a voxel based landscape generation tool, and since godot doesnt have an inbuilt one, we use this plugin https://github.com/Zylann/godot_terrain_plugin to make the landscape.
 
-We also write our own vertext shaders to show different materials based on height.
+We also write our own vertex shaders to show different materials based on height.
 
 //todo: load heightmaps from network and cache them locally
 

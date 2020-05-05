@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Dynamic/Characters/Remy/remy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Dynamic/Characters/player/player.tscn" type="PackedScene" id=2]
@@ -9,18 +9,12 @@
 [ext_resource path="res://Static/land01/maps/grass/Ground037_2K_Color.jpg" type="Texture" id=7]
 [ext_resource path="res://Static/land01/maps/PavingStones025_2K-JPG/PavingStones025_2K_Normal.jpg" type="Texture" id=8]
 [ext_resource path="res://Static/land01/maps/grass/Ground037_2K_Normal.jpg" type="Texture" id=9]
+[ext_resource path="res://addons/silicon.vfx.volumetrics/volumetric_fog.gd" type="Script" id=10]
 
 [node name="root" type="Spatial"]
 
-[node name="remy" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.8388, 4.87178, 26.2057 )
-
 [node name="HTerrain" type="Spatial" parent="."]
 script = ExtResource( 5 )
-collision_enabled = true
-ambient_wind = 0.0
-lod_scale = 2.0
-map_scale = Vector3( 1, 1, 1 )
 _terrain_data = ExtResource( 3 )
 chunk_size = 32
 shader_type = "Classic4"
@@ -53,10 +47,28 @@ shader_params/u_bottom_ao = null
 [node name="player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.334827, 0, 0.94228, 0, 1, 0, -0.94228, 0, 0.334827, 149.797, 16.5348, 150.689 )
 
+[node name="Body" parent="player" index="0"]
+visible = false
+
 [node name="Camera" parent="player/target" index="0"]
-transform = Transform( -0.999851, 0, -0.0172603, 0, 1, 0, 0.0172603, 0, -0.999851, 0, 3.90302, -13.7723 )
+transform = Transform( -0.999851, 0, -0.0172603, 0, 1, 0, 0.0172603, 0, -0.999851, -1.99143, 4.19277, -8.16054 )
 far = 6912.1
 
-[editable path="remy"]
+[node name="remy" parent="player" instance=ExtResource( 1 )]
+
+[node name="VolumetricFog" type="Node" parent="."]
+script = ExtResource( 10 )
+start = 0.1
+end = 100.0
+tile_size = 2
+samples = 1
+distribution = 0.9
+temporal_blending = 0.95
+volumetric_shadows = false
+shadow_atlas_size = 1024
+ambient_light_color = Color( 0.478431, 1, 0, 1 )
+ambient_light_energy = 1.0
 
 [editable path="player"]
+
+[editable path="player/remy"]
