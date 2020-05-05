@@ -1,37 +1,19 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Dynamic/Characters/Remy/remy.tscn" type="PackedScene" id=1]
-[ext_resource path="res://addons/maujoe.camera_control/scripts/camera_control.gd" type="Script" id=2]
+[ext_resource path="res://Dynamic/Characters/player/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Static/land01/data.hterrain" type="Resource" id=3]
 [ext_resource path="res://Static/land01/maps/PavingStones025_2K-JPG/PavingStones025_2K_Color.jpg" type="Texture" id=4]
 [ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=5]
-[ext_resource path="res://Static/land01/maps/grass/Ground037_2K_Normal.jpg" type="Texture" id=6]
+[ext_resource path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" type="Script" id=6]
 [ext_resource path="res://Static/land01/maps/grass/Ground037_2K_Color.jpg" type="Texture" id=7]
 [ext_resource path="res://Static/land01/maps/PavingStones025_2K-JPG/PavingStones025_2K_Normal.jpg" type="Texture" id=8]
-
-[sub_resource type="CubeMesh" id=1]
-
-[sub_resource type="ConcavePolygonShape" id=2]
-data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+[ext_resource path="res://Static/land01/maps/grass/Ground037_2K_Normal.jpg" type="Texture" id=9]
 
 [node name="root" type="Spatial"]
 
 [node name="remy" parent="." instance=ExtResource( 1 )]
-visible = false
-
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 6.44669, 0, 0, 0, 0.0238154, 0, 0, 0, 4.23478, 0, 0, 0 )
-mesh = SubResource( 1 )
-material/0 = null
-
-[node name="StaticBody" type="StaticBody" parent="MeshInstance"]
-
-[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
-shape = SubResource( 2 )
-
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.969347, 0.245697, 0, -0.245697, 0.969347, 0, 3.05026, 4.53455 )
-script = ExtResource( 2 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.8388, 4.87178, 26.2057 )
 
 [node name="HTerrain" type="Spatial" parent="."]
 script = ExtResource( 5 )
@@ -51,10 +33,29 @@ shader_params/u_globalmap_blend_distance = null
 ground/albedo_bump_0 = null
 ground/normal_roughness_0 = null
 ground/albedo_bump_1 = ExtResource( 7 )
-ground/normal_roughness_1 = ExtResource( 6 )
+ground/normal_roughness_1 = ExtResource( 9 )
 ground/albedo_bump_2 = ExtResource( 4 )
 ground/normal_roughness_2 = ExtResource( 8 )
 ground/albedo_bump_3 = null
 ground/normal_roughness_3 = null
 
+[node name="HTerrainDetailLayer" type="Spatial" parent="HTerrain"]
+script = ExtResource( 6 )
+layer_index = 0
+texture = ExtResource( 7 )
+view_distance = 100.0
+custom_shader = null
+density = 4.0
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 62.4785, 1.43029, 17.9699 )
+
+[node name="Camera" parent="player/target" index="0"]
+transform = Transform( -0.999851, 0, -0.0172603, 0, 1, 0, 0.0172603, 0, -0.999851, 0, 3.90302, -13.7723 )
+
 [editable path="remy"]
+
+[editable path="player"]
