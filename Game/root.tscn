@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Dynamic/Characters/Remy/remy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/maujoe.camera_control/scripts/camera_control.gd" type="Script" id=2]
 [ext_resource path="res://Static/land01/data.hterrain" type="Resource" id=3]
 [ext_resource path="res://Static/land01/maps/PavingStones025_2K-JPG/PavingStones025_2K_Color.jpg" type="Texture" id=4]
 [ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=5]
+[ext_resource path="res://Static/land01/maps/grass/Ground037_2K_Normal.jpg" type="Texture" id=6]
 [ext_resource path="res://Static/land01/maps/grass/Ground037_2K_Color.jpg" type="Texture" id=7]
+[ext_resource path="res://Static/land01/maps/PavingStones025_2K-JPG/PavingStones025_2K_Normal.jpg" type="Texture" id=8]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -46,12 +48,12 @@ shader_params/u_depth_blending = true
 shader_params/u_triplanar = false
 shader_params/u_globalmap_blend_start = null
 shader_params/u_globalmap_blend_distance = null
-ground/albedo_bump_0 = ExtResource( 4 )
+ground/albedo_bump_0 = null
 ground/normal_roughness_0 = null
 ground/albedo_bump_1 = ExtResource( 7 )
-ground/normal_roughness_1 = null
-ground/albedo_bump_2 = null
-ground/normal_roughness_2 = null
+ground/normal_roughness_1 = ExtResource( 6 )
+ground/albedo_bump_2 = ExtResource( 4 )
+ground/normal_roughness_2 = ExtResource( 8 )
 ground/albedo_bump_3 = null
 ground/normal_roughness_3 = null
 
