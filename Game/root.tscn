@@ -238,10 +238,6 @@ void fragment() {
 
 [node name="HTerrain" type="Spatial" parent="."]
 script = ExtResource( 5 )
-collision_enabled = true
-ambient_wind = 0.0
-lod_scale = 2.0
-map_scale = Vector3( 1, 1, 1 )
 _terrain_data = ExtResource( 3 )
 chunk_size = 32
 shader_type = "Classic4"
@@ -288,7 +284,7 @@ ambient_light_energy = 1.0
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 206.523, 183.35, 0 )
 __meta__ = {
-"_vol_id": 29,
+"_vol_id": 13,
 "volumetric": 1.0
 }
 
