@@ -1,12 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Dynamic/Characters/Remy/remy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Dynamic/Characters/player/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Static/land01/data.hterrain" type="Resource" id=3]
-[ext_resource path="res://Static/land01/maps/PavingStones025_2K-JPG/PavingStones025_2K_Color.jpg" type="Texture" id=4]
 [ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=5]
-[ext_resource path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" type="Script" id=6]
-[ext_resource path="res://Static/land01/maps/grass/Ground037_2K_Color.jpg" type="Texture" id=7]
 [ext_resource path="res://Static/land01/maps/PavingStones025_2K-JPG/PavingStones025_2K_Normal.jpg" type="Texture" id=8]
 [ext_resource path="res://Static/land01/maps/grass/Ground037_2K_Normal.jpg" type="Texture" id=9]
 [ext_resource path="res://addons/silicon.vfx.volumetrics/volumetric_fog.gd" type="Script" id=10]
@@ -26,23 +23,12 @@ shader_params/u_globalmap_blend_start = null
 shader_params/u_globalmap_blend_distance = null
 ground/albedo_bump_0 = null
 ground/normal_roughness_0 = null
-ground/albedo_bump_1 = ExtResource( 7 )
+ground/albedo_bump_1 = null
 ground/normal_roughness_1 = ExtResource( 9 )
-ground/albedo_bump_2 = ExtResource( 4 )
+ground/albedo_bump_2 = null
 ground/normal_roughness_2 = ExtResource( 8 )
 ground/albedo_bump_3 = null
 ground/normal_roughness_3 = null
-
-[node name="HTerrainDetailLayer" type="Spatial" parent="HTerrain"]
-script = ExtResource( 6 )
-layer_index = 0
-texture = ExtResource( 7 )
-view_distance = 100.0
-custom_shader = null
-density = 4.0
-shader_params/u_globalmap_tint_bottom = null
-shader_params/u_globalmap_tint_top = null
-shader_params/u_bottom_ao = null
 
 [node name="player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.334827, 0, 0.94228, 0, 1, 0, -0.94228, 0, 0.334827, 149.797, 62.5327, 150.689 )
